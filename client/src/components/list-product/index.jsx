@@ -1,4 +1,4 @@
-export const ListPorduct = () => {
+export const ListPorduct = ({ data }) => {
   return (
     <a href="#" className="max-w-sm w-52 mt-5 rounded-lg flex flex-col ">
       <img
@@ -7,7 +7,7 @@ export const ListPorduct = () => {
         alt=""
       />
       <div className="text-center">
-        <h5 className="mb-2 mt-2 text-2xl font-bold tracking-tight text-black">Iphone X</h5>
+        <h5 className="mb-2 mt-2 text-2xl font-bold tracking-tight text-black">{data.title}</h5>
       </div>
     </a>
   );
