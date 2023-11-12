@@ -1,0 +1,21 @@
+
+GET http://localhost:5000/
+
+###
+
+GET http://localhost:5000/65507f7202bffd5dd7e7e7ad
+###
+POST http://localhost:5000/
+Content-Type: application/json
+
+{
+    "title": "hiliw",
+    "description": "Ini Adalah Uji Coba",
+    "price": "50000",
+    "image": "hhtps://dasdas",
+    "weight": 200,
+    "weidth": 5,
+    "length": 5,
+    "height": 5
+}
+
