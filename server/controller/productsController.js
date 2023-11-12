@@ -12,17 +12,16 @@ export const getProduct = async (req, res) => {
 };
 
 export const postProducts = async (req, res) => {
-  const { title, description, price, image, weight, width, length, height } = req.body;
+  const { title, description, price, brand, category, images, thumbnail } = req.body;
 
   const newPostProducts = new ProductModels({
     title,
     description,
     price,
-    image,
-    weight,
-    width,
-    length,
-    height,
+    brand,
+    category,
+    images,
+    thumbnail,
   });
   try {
     await newPostProducts.save();

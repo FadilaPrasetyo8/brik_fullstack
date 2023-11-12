@@ -3,12 +3,11 @@ import mongoose from "mongoose";
 const productShema = mongoose.Schema({
   title: String,
   description: String,
-  price: String,
-  image: String,
-  weight: Number,
-  width: Number,
-  length: Number,
-  height: Number,
+  price: Number,
+  brand: String,
+  category: String,
+  images: String,
+  thumbnail: String,
   createAt: {
     type: Date,
     default: new Date(),

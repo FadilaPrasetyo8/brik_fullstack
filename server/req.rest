@@ -9,13 +9,13 @@ POST http://localhost:5000/
 Content-Type: application/json
 
 {
-    "title": "mangea",
-    "description": "Ini Adalah Uji Coba",
-    "price": "50000",
-    "image": "hhtps://dasdas",
-    "weight": 200,
-    "weidth": 5,
-    "length": 5,
-    "height": 5
+    "title": "Samsung Universe 9",
+    "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+    "price": "1249",
+    "brand": "Samsung",
+    "category": "smartphones",
+    "images": "https://i.dummyjson.com/data/products/3/1.jpg",
+    "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg"
+    
 }
 
