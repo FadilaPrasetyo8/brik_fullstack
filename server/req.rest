@@ -9,7 +9,7 @@ POST http://localhost:5000/
 Content-Type: application/json
 
 {
-    "title": "hiliw",
+    "title": "mangea",
     "description": "Ini Adalah Uji Coba",
     "price": "50000",
     "image": "hhtps://dasdas",

@@ -5,7 +5,7 @@ import { createElement } from "react";
 
 export const Sidebar = ({ children }) => {
   const [open, setOpen] = useState(window.innerWidth > 1280 && true);
-  const Menus = [{ icon: BsBoxSeam, name: "Product", href: "Product" }];
+  const Menus = [{ icon: BsBoxSeam, name: "Product", href: "products" }];
 
   return (
     <div className="flex">

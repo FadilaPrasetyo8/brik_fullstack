@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<RequireSidebar />}>
-            <Route path="/" element={<ListPorduct />} />
+            <Route path="/products" element={<ListPorduct />} />
           </Route>
         </Routes>
       </BrowserRouter>
