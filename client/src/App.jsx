@@ -1,8 +1,7 @@
-import "./App.css";
-import { Sidebar } from "./components/ui/sidebar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RequireSidebar } from "./require-sidebar";
-import { ListPorduct } from "./components/list-product";
+import { ListProductPages } from "./pages/list-product-pages";
+import { AddProductPages } from "./pages/add-product-pages";
 
 function App() {
   return (
@@ -10,7 +9,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<RequireSidebar />}>
-            <Route path="/products" element={<ListPorduct />} />
+            <Route path="/products" element={<ListProductPages />} />
+            <Route path="/add-product" element={<AddProductPages />} />
           </Route>
         </Routes>
       </BrowserRouter>
