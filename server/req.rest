@@ -9,13 +9,16 @@ POST http://localhost:5000/
 Content-Type: application/json
 
 {
-    "title": "Samsung Universe 9",
-    "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-    "price": "1249",
-    "brand": "Samsung",
-    "category": "smartphones",
-    "images": "https://i.dummyjson.com/data/products/3/1.jpg",
-    "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg"
+    "title": "Microsoft Surface Laptop ",
+    "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen",
+    "price": "1499",
+    "brand": "Microsoft Surface",
+    "category": "laptops",
+    "images": "https://i.dummyjson.com/data/products/8/1.jpg",
+    "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
     
 }
+
+###
+https://dummyjson.com/products
 
