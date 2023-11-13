@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import { ListPorduct } from "../../components/list-product";
-import { getProductApi } from "../../api";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../features/dataSlice";
 
 export const ListProductPages = () => {
-  // const [product, setProduct] = useState([]);
-
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
   const status = useSelector((state) => state.data.status);
@@ -15,7 +12,6 @@ export const ListProductPages = () => {
     dispatch(fetchData());
   }, [dispatch]);
 
-  // console.log(product);
   if (status === "loading") {
     return <div>Loading...</div>;
   }

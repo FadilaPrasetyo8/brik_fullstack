@@ -1,7 +1,19 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getProductApi, postProductApi } from "../api";
 
 export const fetchData = createAsyncThunk("data/fetchData", async () => {
-  const response = await fetch("http://localhost:5000/");
+  const data = await getProductApi();
+  return data;
+});
+
+export const postData = createAsyncThunk("data/postData", async (postData) => {
+  const response = await fetch("http://localhost:5000/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(postData),
+  });
   const data = await response.json();
   return data;
 });
@@ -26,6 +38,18 @@ const dataSlice = createSlice({
       .addCase(fetchData.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+      .addCase(postData.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(postData.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(postData.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+        console.error("Error posting data:", action.error.message);
       });
   },
 });
