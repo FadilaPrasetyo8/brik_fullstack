@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getProductApi, postProductApi } from "../api";
+import { getDetailProductApi, getProductApi, postProductApi } from "../api";
 
 export const fetchData = createAsyncThunk("data/fetchData", async () => {
   const data = await getProductApi();
@@ -15,6 +15,11 @@ export const postData = createAsyncThunk("data/postData", async (postData) => {
     body: JSON.stringify(postData),
   });
   const data = await response.json();
+  return data;
+});
+
+export const fetchProductById = createAsyncThunk("data/fetchProductById", async (id) => {
+  const data = await getDetailProductApi(id);
   return data;
 });
 
@@ -50,6 +55,18 @@ const dataSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
         console.error("Error posting data:", action.error.message);
+      })
+      .addCase(fetchProductById.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchProductById.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(fetchProductById.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+        console.error("Error fetching data:", action.error.message);
       });
   },
 });
