@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsBoxSeam } from "react-icons/bs";
 import { createElement } from "react";
 
@@ -7,7 +8,7 @@ export const Sidebar = ({ children }) => {
   const [open, setOpen] = useState(window.innerWidth > 1280 && true);
   const Menus = [
     { icon: BsBoxSeam, name: "Product", href: "/products" },
-    { icon: BsBoxSeam, name: "Add Product", href: "/add-product" },
+    { icon: MdProductionQuantityLimits, name: "Add Product", href: "/add-product" },
   ];
 
   return (
@@ -24,7 +25,6 @@ export const Sidebar = ({ children }) => {
           <GiHamburgerMenu />
         </button>
         <ul className={`${!open && "scale-0"} space-y-1 font-medium`}>
-          <span className="text-slate-300 text-xl m-4 ">Categories</span>
           {Menus.map((menu, i) => (
             <li key={i}>
               <a

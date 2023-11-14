@@ -10,8 +10,16 @@ export const getProduct = async (req, res) => {
     const startIndex = (page - 1) * perPage;
     const endIndex = startIndex + perPage;
 
-    const totalProducts = await ProductModels.countDocuments();
-    const products = await ProductModels.find().skip(startIndex).limit(perPage);
+    const totalProducts = await ProductModels.countDocuments().catch((error) => {
+      throw new Error(`Error counting documents: ${error.message}`);
+    });
+
+    const products = await ProductModels.find()
+      .skip(startIndex)
+      .limit(perPage)
+      .catch((error) => {
+        throw new Error(`Error fetching products: ${error.message}`);
+      });
 
     res.status(200).json({
       page,

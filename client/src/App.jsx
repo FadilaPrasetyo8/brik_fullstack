@@ -12,8 +12,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route element={<RequireSidebar />}>
-            <Route path="products" element={<ListProductPages />} />
-            <Route path="add-product" element={<AddProductPages />} />
+            <Route path="/products" element={<ListProductPages />} />
+            <Route path="/add-product" element={<AddProductPages />} />
             <Route path="/products/:id" element={<DetailProductPages />} />
           </Route>
         </Routes>

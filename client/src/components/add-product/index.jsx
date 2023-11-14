@@ -25,7 +25,13 @@ export const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postData(formData));
+    try {
+      dispatch(postData(formData));
+      alert("Add Product Success");
+      window.location.reload();
+    } catch (error) {
+      console.error("Error during login:", error.message);
+    }
   };
 
   return (

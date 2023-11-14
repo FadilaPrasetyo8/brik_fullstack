@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getDetailProductApi, getProductApi, postProductApi } from "../api";
 
-export const fetchData = createAsyncThunk("data/fetchData", async () => {
-  const data = await getProductApi();
+export const fetchData = createAsyncThunk("data/fetchData", async (page) => {
+  const data = await getProductApi(page);
   return data;
 });
 
@@ -38,7 +38,10 @@ const dataSlice = createSlice({
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.data = action.payload;
+        state.data = action.payload.products;
+        state.totalProducts = action.payload.totalProducts;
+        state.page = action.payload.page;
+        state.endIndex = action.payload.endIndex;
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.status = "failed";
