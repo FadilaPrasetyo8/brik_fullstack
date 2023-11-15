@@ -48,7 +48,7 @@ export const AddProduct = () => {
             type="text"
             id="title"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="name@flowbite.com"
+            placeholder="title"
             required
           />
         </div>
@@ -63,7 +63,7 @@ export const AddProduct = () => {
             type="text"
             id="description"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="name@flowbite.com"
+            placeholder="description"
             required
           />
         </div>
@@ -78,7 +78,7 @@ export const AddProduct = () => {
             type="number"
             id="price"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="name@flowbite.com"
+            placeholder="price"
             required
           />
         </div>
@@ -93,7 +93,7 @@ export const AddProduct = () => {
             type="text"
             id="brand"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="name@flowbite.com"
+            placeholder="brand"
             required
           />
         </div>
@@ -108,7 +108,7 @@ export const AddProduct = () => {
             type="text"
             id="category"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="name@flowbite.com"
+            placeholder="category"
             required
           />
         </div>
