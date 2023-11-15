@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 export const RequireSidebar = () => {
   const { getItem } = UseLocalStorage();
-  const navigate = Navigate();
   const [getToken, setGetToken] = useState("");
 
   useEffect(() => {
@@ -20,6 +19,6 @@ export const RequireSidebar = () => {
       <Outlet />
     </Sidebar>
   ) : (
-    <Navigate to="/" replace={true} />
+    <Navigate to="/" />
   );
 };
